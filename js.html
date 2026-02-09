@@ -9,21 +9,19 @@
     <div id="hero"></div>
 
     <script>
-      const person = {
+      const fullname = {
         name: "Hirusha",
         age: 14,
-        Remark: "Pass",
+        address: "Meetiyagoda",
       };
 
-      person.fullname = function () {
-        return person.name.toUpperCase();
-      };
+      let text = "";
 
-      person.maxvalue = function () {
-        return 1 + 2;
-      };
+      for (let x in fullname) {
+        text += fullname[x] + " ";
+      }
 
-      document.getElementById("hero").innerHTML = person.fullname();
+      document.getElementById("hero").innerHTML = text;
     </script>
   </body>
 </html>
