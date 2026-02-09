@@ -10,15 +10,16 @@
 
     <script>
       const person = {
-        name: "Person",
+        name: "Hirusha",
         age: 14,
         Remark: "Pass",
-
-        fulldetail: function () {
-          return this.name + " " + this.age;
-        },
       };
-      document.getElementById("hero").innerHTML = person.fulldetail();
+
+      person.fullname = function () {
+        return person.name;
+      };
+
+      document.getElementById("hero").innerHTML = person.fullname();
     </script>
   </body>
 </html>
