@@ -16,7 +16,11 @@
       };
 
       person.fullname = function () {
-        return person.name;
+        return person.name.toUpperCase();
+      };
+
+      person.maxvalue = function () {
+        return 1 + 2;
       };
 
       document.getElementById("hero").innerHTML = person.fullname();
