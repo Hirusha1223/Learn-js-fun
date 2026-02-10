@@ -7,21 +7,63 @@
   </head>
   <body>
     <div id="hero"></div>
+    <div id="naro"></div>
+    <div id="zero"></div>
 
     <script>
-      const fullname = {
-        name: "Hirusha",
-        age: 14,
-        address: "Meetiyagoda",
-      };
-
-      let text = "";
-
-      for (let x in fullname) {
-        text += fullname[x] + " ";
+      function Car(name, brand, km, condi) {
+        ((this.name = name),
+          (this.brand = brand),
+          (this.golong = km),
+          (this.condition = "english"));
       }
 
-      document.getElementById("hero").innerHTML = text;
+      let bmw = new Car("benz-123", "benz", 14, "good");
+
+      document.getElementById("hero").innerHTML = bmw.name;
+
+      function Brand(name, company, date, count) {
+        this.name = name;
+        this.Company = "shara";
+        this.date = date;
+        this.count = count;
+      }
+
+      let odel = new Brand("T9", "slsl", 2003, 600);
+      let samsung = new Brand("T20", "tsts", 3400, 6000);
+
+      odel.idea = "good";
+      odel.varchar = "same";
+      odel.hahuu = "eruna";
+
+      //adding a property to cunstructor
+      Brand.idea = "good";
+      odel.Brand.quality = "hi level";
+
+      document.getElementById("hero").innerHTML =
+        odel.Company +
+        odel.idea +
+        odel.varchar +
+        odel.hahuu +
+        odel.idea +
+        " " +
+        odel.quality;
+      document.getElementById("naro").innerHTML = samsung.Company;
+
+      text = "";
+      for (let i in odel) {
+        text += odel[i] + " ";
+      }
+
+      document.getElementById("zero").innerHTML = text;
+
+      const january = {
+        name: "january",
+        address: "Meetiyagoda",
+        fullname: function () {
+          return january.name;
+        },
+      };
     </script>
   </body>
 </html>
