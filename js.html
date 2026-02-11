@@ -11,59 +11,31 @@
     <div id="zero"></div>
 
     <script>
-      function Car(name, brand, km, condi) {
-        ((this.name = name),
-          (this.brand = brand),
-          (this.golong = km),
-          (this.condition = "english"));
+      function Person(name, age, status) {
+        this.firstname = name;
+        this.youage = age;
+        this.status = status;
+        this.fullname = function () {
+          return this.firstname;
+        };
       }
 
-      let bmw = new Car("benz-123", "benz", 14, "good");
+      let Hirusha = new Person("Hirusha", 23, "good");
 
-      document.getElementById("hero").innerHTML = bmw.name;
+      Hirusha.member = true;
 
-      function Brand(name, company, date, count) {
-        this.name = name;
-        this.Company = "shara";
-        this.date = date;
-        this.count = count;
-      }
-
-      let odel = new Brand("T9", "slsl", 2003, 600);
-      let samsung = new Brand("T20", "tsts", 3400, 6000);
-
-      odel.idea = "good";
-      odel.varchar = "same";
-      odel.hahuu = "eruna";
-
-      //adding a property to cunstructor
-      Brand.idea = "good";
-      odel.Brand.quality = "hi level";
+      Person.prototype.story = 10;
 
       document.getElementById("hero").innerHTML =
-        odel.Company +
-        odel.idea +
-        odel.varchar +
-        odel.hahuu +
-        odel.idea +
-        " " +
-        odel.quality;
-      document.getElementById("naro").innerHTML = samsung.Company;
+        Hirusha.firstname + " " + Hirusha.member + " " + Hirusha.story;
 
-      text = "";
-      for (let i in odel) {
-        text += odel[i] + " ";
-      }
-
-      document.getElementById("zero").innerHTML = text;
-
-      const january = {
-        name: "january",
-        address: "Meetiyagoda",
-        fullname: function () {
-          return january.name;
-        },
+      fullname = function (rsname) {
+        return (this.firstname = rsname);
       };
+
+      let x = Hirusha.fullname("hirusha");
+
+      document.getElementById("naro").innerHTML = x;
     </script>
   </body>
 </html>
