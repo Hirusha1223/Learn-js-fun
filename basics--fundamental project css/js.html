@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="hero"></div>
+    <div id="naro"></div>
+    <div id="zero"></div>
+
+    <script>
+      // const x = new Temporal.PlainDate(2026, 5, 31);
+      const dates = [
+        Temporal.PlainDate.from("2026-05-01"),
+        Temporal.PlainDate.from("2026-04-01"),
+        Temporal.PlainDate.from("2026-05-26"),
+      ];
+
+      dates.sort(Temporal.PlainDate.compare);
+      document.getElementById("hero").innerHTML = dates;
+    </script>
+  </body>
+</html>
