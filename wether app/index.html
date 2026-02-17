@@ -38,6 +38,28 @@
       const apiurl =
         "https://api.openweathermap.org/data/2.5/weather?units=metric";
       const apikey = "527adb61ff2370bbe41c5ac4847e8587";
+
+      const searchBox = document.querySelector(".search input");
+      const searchBtn = document.querySelector(".search button");
+
+      async function checkwether(city) {
+        const response = await fetch(
+          apiurl + city + `&q=${city}&appid=${apikey}`,
+        );
+        var data = await response.json();
+
+        console.log(data);
+        document.querySelector(".city").innerHTML = data.name;
+        document.querySelector(".temp").innerHTML =
+          Math.round(data.main.temp) + "c";
+        document.querySelector(".humidity").innerHTML =
+          data.main.humidity + "%";
+        document.querySelector(".wind").innerHTML = data.wind.speed + "km/h";
+      }
+
+      searchBtn.addEventListener("click", () => {
+        checkwether(searchBox.value);
+      });
     </script>
   </body>
 </html>
