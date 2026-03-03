@@ -4,22 +4,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+
+    <style></style>
   </head>
   <body>
     <div id="hero"></div>
     <div id="naro"></div>
     <div id="zero"></div>
-
+    <button onclick="myfunc()">try</button>
     <script>
-      // const x = new Temporal.PlainDate(2026, 5, 31);
-      const dates = [
-        Temporal.PlainDate.from("2026-05-01"),
-        Temporal.PlainDate.from("2026-04-01"),
-        Temporal.PlainDate.from("2026-05-26"),
-      ];
+      const points = [40, 100, 1, 5, 25, 10];
+      document.getElementById("zero").innerHTML = points;
 
-      dates.sort(Temporal.PlainDate.compare);
-      document.getElementById("hero").innerHTML = dates;
+      function myfunc() {
+        points.sort(function () {
+          return 0.5 - Math.random();
+        });
+        document.getElementById("hero").innerHTML = points;
+      }
     </script>
   </body>
 </html>
